@@ -3,14 +3,13 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import { Link, useHistory } from 'react-router-dom'
-
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { signinUser } from '../redux/action/SigninAction'
 
@@ -36,7 +35,7 @@ const useStyles = makeStyles({
 });
 
 
-export default function Signup() {
+export default function Signin() {
     const classes = useStyles();
     const { handleSubmit, getFieldProps, errors, touched } = useFormik({
         initialValues: {
