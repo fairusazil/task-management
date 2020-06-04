@@ -12,6 +12,8 @@ import Button from '@material-ui/core/Button';
 
 import { makeStyles } from '@material-ui/core/styles';
 
+import { addUser } from '../redux/action/SignupAction';
+import { useDispatch } from 'react-redux'
 
 const useStyles = makeStyles({
     root: {
@@ -36,6 +38,7 @@ const useStyles = makeStyles({
 
 
 export default function Signup() {
+    const dispatch = useDispatch();
     const classes = useStyles();
     const { handleSubmit, getFieldProps, errors, touched } = useFormik({
         initialValues: {
@@ -49,7 +52,8 @@ export default function Signup() {
             password: Yup.string().required('Cannot Blank!').min(8, 'must be at least 8 characters or more'),
         }),
         onSubmit: (values) => {
-            console.log(values)
+            // console.log(values)
+            dispatch(addUser(values))
         }
     })
     return (
