@@ -49,7 +49,7 @@ export default function Signin() {
         }),
         onSubmit: (values) => {
             dispatch(signinUser(values))
-            // console.log(values)
+            console.log(values)
         }
     })
     const dispatch = useDispatch()
