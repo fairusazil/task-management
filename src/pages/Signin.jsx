@@ -48,8 +48,8 @@ export default function Signin() {
             password: Yup.string().required('Cannot Blank!').min(8, 'must be at least 8 characters or more'),
         }),
         onSubmit: (values) => {
-            dispatch(signinUser(values))
-            console.log(values)
+            dispatch(signinUser(values, history))
+            // console.log(values)
         }
     })
     const dispatch = useDispatch()

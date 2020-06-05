@@ -3,7 +3,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -54,8 +54,11 @@ export default function Signup() {
         onSubmit: (values) => {
             // console.log(values)
             dispatch(addUser(values))
+            alert ('Sign up success!')
+            history.push('/signin')
         }
     })
+    const history = useHistory()
     return (
         <Grid container className={classes.root}>
             <Grid

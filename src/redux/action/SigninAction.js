@@ -10,11 +10,13 @@ export const signinUser = (values, history) => {
                 // console.log(response);
                 localStorage.setItem('id', response.data.id);
                 localStorage.setItem('role', response.data.role);
-                localStorage.setItem('message', response.data.message);
+                localStorage.setItem('isLoggedIn', true);
                 dispatch(newSignin(response.data.role, history))
 
             })
             .catch((error) => {
+                // console.log(error);
+                
                 alert(error.response.data)
                 throw error;
             })
